@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  /* Breakpoints */
+  --breakpoint-xs: 30rem;
+
+  /* Aronanda brand palette */
+  --color-marfil: #F8F2E9;
+  --color-oro: #B8881E;
+  --color-oro-soft: #D2AA5C;
+  --color-espresso: #2A1A0E;
+  --color-espresso-soft: #4A3324;
+  --color-terracota: #B85C38;
+  --color-salvia: #7A8C6A;
+  --color-rosa: #C49080;
+  --color-arena: #EDE5D8;
+
+  /* Typography */
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-sans: "Jost", "Helvetica Neue", sans-serif;
+
+  /* Easing */
+  --ease-aronanda: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-marfil);
+  color: var(--color-espresso);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-oro);
+  color: var(--color-marfil);
+}
+
+/* Custom scrollbar for horizontal carousels */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
